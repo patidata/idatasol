@@ -1,0 +1,1239 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO Meta Tags -->
+  <title>iDatasol | Datos, Campañas y Consultoría de Marketing Directo en Argentina</title>
+  <meta name="description" content="iDatasol ofrece bases de datos geolocalizadas, campañas de email y WhatsApp, consultoría en retargeting y nurturing, e investigación de mercado para maximizar tu conversión en Argentina." />
+  <meta name="keywords" content="base de datos marketing, email marketing argentina, whatsapp marketing, retargeting, nurturing, investigación de mercado, marketing directo B2B, datos geolocalizados" />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="iDatasol" />
+  <link rel="canonical" href="https://www.idatasol.com" />
+
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.idatasol.com" />
+  <meta property="og:title" content="iDatasol | Marketing Directo con Datos Precisos" />
+  <meta property="og:description" content="Bases de datos, campañas y consultoría de marketing para empresas en Argentina." />
+  <meta property="og:locale" content="es_AR" />
+
+  <!-- Schema.org Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "iDatasol",
+    "url": "https://www.idatasol.com",
+    "description": "Empresa especializada en bases de datos para marketing directo, campañas de email y WhatsApp, consultoría en conversión e investigación de mercado en Argentina.",
+    "areaServed": "AR",
+    "serviceType": ["Marketing Directo", "Base de Datos", "Consultoría de Marketing", "Investigación de Mercado"]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #f5f5f0;
+      --bg-card: #ffffff;
+      --ink: #0d0d0d;
+      --ink-soft: #555550;
+      --ink-muted: #999990;
+      --accent: #0a5fff;
+      --accent-dark: #0040cc;
+      --accent-light: #e8f0ff;
+      --line: #e2e2dc;
+      --radius: 16px;
+      --radius-sm: 10px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ─── NAV ─────────────────────────────────────────── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 48px;
+      height: 64px;
+      background: rgba(245,245,240,0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav-logo {
+      font-family: 'DM Serif Display', serif;
+      font-size: 22px;
+      color: var(--ink);
+      text-decoration: none;
+      letter-spacing: -0.5px;
+    }
+    .nav-logo span { color: var(--accent); }
+
+    .nav-links {
+      display: flex; gap: 36px; list-style: none;
+    }
+    .nav-links a {
+      color: var(--ink-soft);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--ink); }
+
+    .nav-cta {
+      background: var(--ink);
+      color: #fff !important;
+      padding: 8px 20px;
+      border-radius: 100px;
+      font-size: 13px !important;
+      font-weight: 500 !important;
+      transition: background 0.2s !important;
+    }
+    .nav-cta:hover { background: var(--accent) !important; color: #fff !important; }
+
+    /* ─── HERO ────────────────────────────────────────── */
+    #hero {
+      min-height: 100vh;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      text-align: center;
+      padding: 120px 24px 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-grid {
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(10,95,255,0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(10,95,255,0.06) 1px, transparent 1px);
+      background-size: 48px 48px;
+      mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, black 20%, transparent 100%);
+    }
+
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--accent-light);
+      color: var(--accent);
+      font-size: 12px; font-weight: 600;
+      padding: 6px 16px; border-radius: 100px;
+      letter-spacing: 0.5px; text-transform: uppercase;
+      margin-bottom: 32px;
+      animation: fadeUp 0.8s ease both;
+    }
+    .hero-badge::before {
+      content: '';
+      width: 6px; height: 6px;
+      background: var(--accent);
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(1.4); }
+    }
+
+    h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(44px, 7vw, 88px);
+      line-height: 1.0;
+      letter-spacing: -2px;
+      color: var(--ink);
+      max-width: 900px;
+      animation: fadeUp 0.8s 0.1s ease both;
+    }
+    h1 em {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .hero-sub {
+      margin-top: 24px;
+      font-size: clamp(16px, 2vw, 20px);
+      color: var(--ink-soft);
+      max-width: 560px;
+      font-weight: 300;
+      line-height: 1.7;
+      animation: fadeUp 0.8s 0.2s ease both;
+    }
+
+    .hero-actions {
+      display: flex; gap: 16px; margin-top: 48px;
+      flex-wrap: wrap; justify-content: center;
+      animation: fadeUp 0.8s 0.3s ease both;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+      padding: 16px 36px;
+      border-radius: 100px;
+      font-size: 15px; font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s;
+      box-shadow: 0 8px 32px rgba(10,95,255,0.3);
+    }
+    .btn-primary:hover {
+      background: var(--accent-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 40px rgba(10,95,255,0.4);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--ink);
+      padding: 16px 36px;
+      border-radius: 100px;
+      font-size: 15px; font-weight: 500;
+      text-decoration: none;
+      border: 1.5px solid var(--line);
+      transition: all 0.2s;
+    }
+    .btn-secondary:hover {
+      border-color: var(--ink);
+      transform: translateY(-2px);
+    }
+
+    .hero-stats {
+      display: flex; gap: 48px; margin-top: 80px;
+      flex-wrap: wrap; justify-content: center;
+      animation: fadeUp 0.8s 0.4s ease both;
+    }
+    .stat {
+      text-align: center;
+    }
+    .stat-num {
+      font-family: 'DM Serif Display', serif;
+      font-size: 40px;
+      color: var(--ink);
+      line-height: 1;
+    }
+    .stat-num span { color: var(--accent); }
+    .stat-label {
+      font-size: 13px;
+      color: var(--ink-muted);
+      margin-top: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ─── SECTION BASE ────────────────────────────────── */
+    section {
+      padding: 100px 24px;
+    }
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .section-label {
+      font-size: 12px; font-weight: 600;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 16px;
+    }
+    h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(32px, 4vw, 52px);
+      letter-spacing: -1.5px;
+      line-height: 1.1;
+      color: var(--ink);
+    }
+    h2 em { font-style: italic; color: var(--accent); }
+    .section-intro {
+      font-size: 18px;
+      color: var(--ink-soft);
+      max-width: 540px;
+      font-weight: 300;
+      line-height: 1.7;
+      margin-top: 16px;
+    }
+
+    /* ─── LOGOS STRIP ─────────────────────────────────── */
+    #logos {
+      padding: 48px 24px;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+    .logos-label {
+      text-align: center;
+      font-size: 12px;
+      color: var(--ink-muted);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 32px;
+    }
+    .logos-row {
+      display: flex; justify-content: center; align-items: center;
+      gap: 56px; flex-wrap: wrap;
+    }
+    .logo-pill {
+      font-family: 'DM Serif Display', serif;
+      font-size: 18px;
+      color: var(--ink-muted);
+      opacity: 0.5;
+      letter-spacing: -0.5px;
+      transition: opacity 0.2s;
+    }
+    .logo-pill:hover { opacity: 1; }
+
+    /* ─── SERVICES ────────────────────────────────────── */
+    #servicios { background: var(--bg); }
+
+    .services-header {
+      display: flex; justify-content: space-between; align-items: flex-end;
+      margin-bottom: 64px; flex-wrap: wrap; gap: 24px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    @media (max-width: 768px) {
+      .services-grid { grid-template-columns: 1fr; }
+    }
+
+    .service-card {
+      background: var(--bg-card);
+      border-radius: var(--radius);
+      padding: 48px;
+      border: 1px solid var(--line);
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+    }
+    .service-card.featured {
+      background: var(--ink);
+      border-color: var(--ink);
+      grid-column: span 2;
+    }
+    @media (max-width: 768px) {
+      .service-card.featured { grid-column: span 1; }
+    }
+
+    .service-icon {
+      width: 48px; height: 48px;
+      border-radius: var(--radius-sm);
+      background: var(--accent-light);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 22px;
+      margin-bottom: 28px;
+    }
+    .service-card.featured .service-icon {
+      background: rgba(255,255,255,0.1);
+    }
+
+    .service-card h3 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 26px;
+      letter-spacing: -0.5px;
+      margin-bottom: 12px;
+    }
+    .service-card.featured h3 { color: #fff; }
+
+    .service-card p {
+      font-size: 15px;
+      color: var(--ink-soft);
+      line-height: 1.7;
+      font-weight: 300;
+    }
+    .service-card.featured p { color: rgba(255,255,255,0.65); }
+
+    .service-tags {
+      display: flex; flex-wrap: wrap; gap: 8px; margin-top: 24px;
+    }
+    .tag {
+      font-size: 12px; font-weight: 500;
+      padding: 5px 12px;
+      border-radius: 100px;
+      background: var(--bg);
+      color: var(--ink-soft);
+      border: 1px solid var(--line);
+    }
+    .service-card.featured .tag {
+      background: rgba(255,255,255,0.1);
+      border-color: rgba(255,255,255,0.2);
+      color: rgba(255,255,255,0.8);
+    }
+
+    .featured-inner {
+      display: flex; justify-content: space-between; align-items: flex-start;
+      gap: 48px; flex-wrap: wrap;
+    }
+    .featured-left { flex: 1; min-width: 280px; }
+    .featured-right {
+      flex: 1; min-width: 280px;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 24px;
+    }
+    .metric {
+      text-align: left;
+    }
+    .metric-num {
+      font-family: 'DM Serif Display', serif;
+      font-size: 44px;
+      color: #fff;
+      line-height: 1;
+    }
+    .metric-num span { color: var(--accent); }
+    .metric-label {
+      font-size: 13px;
+      color: rgba(255,255,255,0.5);
+      margin-top: 6px;
+    }
+
+    /* ─── CASOS ───────────────────────────────────────── */
+    #casos { background: var(--ink); }
+    #casos .section-label { color: rgba(10,95,255,0.9); }
+    #casos h2 { color: #fff; }
+    #casos .section-intro { color: rgba(255,255,255,0.5); }
+
+    .casos-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 64px;
+    }
+    @media (max-width: 900px) {
+      .casos-grid { grid-template-columns: 1fr; }
+    }
+
+    .caso-card {
+      border-radius: var(--radius);
+      padding: 40px;
+      border: 1px solid rgba(255,255,255,0.1);
+      background: rgba(255,255,255,0.04);
+      transition: border-color 0.3s, background 0.3s;
+    }
+    .caso-card:hover {
+      border-color: rgba(10,95,255,0.5);
+      background: rgba(10,95,255,0.06);
+    }
+
+    .caso-industry {
+      font-size: 12px; font-weight: 600;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 20px;
+    }
+    .caso-result {
+      font-family: 'DM Serif Display', serif;
+      font-size: 52px;
+      color: #fff;
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+    .caso-result span { color: var(--accent); }
+    .caso-desc {
+      font-size: 14px;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.7;
+    }
+
+    /* ─── CONSULTORIA ─────────────────────────────────── */
+    #consultoria { background: var(--bg); }
+
+    .consult-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    @media (max-width: 768px) {
+      .consult-wrap { grid-template-columns: 1fr; }
+    }
+
+    .consult-steps {
+      display: flex; flex-direction: column; gap: 0;
+      margin-top: 48px;
+    }
+    .step {
+      display: flex; gap: 24px;
+      padding: 28px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .step:last-child { border-bottom: none; }
+    .step-num {
+      font-family: 'DM Serif Display', serif;
+      font-size: 13px;
+      color: var(--accent);
+      min-width: 32px;
+      padding-top: 3px;
+    }
+    .step-content h4 {
+      font-size: 16px; font-weight: 600;
+      margin-bottom: 6px;
+    }
+    .step-content p {
+      font-size: 14px;
+      color: var(--ink-soft);
+      line-height: 1.6;
+      font-weight: 300;
+    }
+
+    .consult-visual {
+      background: var(--bg-card);
+      border-radius: var(--radius);
+      padding: 48px;
+      border: 1px solid var(--line);
+    }
+    .funnel {
+      display: flex; flex-direction: column; gap: 12px;
+    }
+    .funnel-stage {
+      border-radius: var(--radius-sm);
+      padding: 16px 24px;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .funnel-stage:nth-child(1) { background: var(--accent); width: 100%; }
+    .funnel-stage:nth-child(2) { background: #1a6fff; width: 85%; }
+    .funnel-stage:nth-child(3) { background: #3380ff; width: 68%; }
+    .funnel-stage:nth-child(4) { background: #4d93ff; width: 48%; }
+    .funnel-stage:nth-child(5) { background: #66a3ff; width: 30%; }
+
+    .funnel-label { font-size: 13px; font-weight: 600; color: #fff; }
+    .funnel-pct { font-size: 13px; color: rgba(255,255,255,0.75); }
+
+    /* ─── NOSOTROS ────────────────────────────────────── */
+    #nosotros {
+      background: var(--bg-card);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nosotros-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    @media (max-width: 768px) {
+      .nosotros-wrap { grid-template-columns: 1fr; }
+    }
+
+    .nosotros-text p {
+      font-size: 16px;
+      color: var(--ink-soft);
+      font-weight: 300;
+      line-height: 1.8;
+      margin-top: 24px;
+    }
+
+    .values-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 24px;
+    }
+    .value-item {
+      padding: 28px;
+      border-radius: var(--radius-sm);
+      background: var(--bg);
+      border: 1px solid var(--line);
+    }
+    .value-icon { font-size: 24px; margin-bottom: 12px; }
+    .value-item h4 { font-size: 15px; font-weight: 600; margin-bottom: 6px; }
+    .value-item p { font-size: 13px; color: var(--ink-soft); line-height: 1.6; font-weight: 300; }
+
+    /* ─── BLOG ────────────────────────────────────────── */
+    #blog { background: var(--bg); }
+
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 64px;
+    }
+    @media (max-width: 900px) {
+      .blog-grid { grid-template-columns: 1fr; }
+    }
+
+    .post-card {
+      background: var(--bg-card);
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--line);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .post-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+    }
+
+    .post-thumb {
+      height: 180px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 48px;
+    }
+    .post-thumb.t1 { background: linear-gradient(135deg, #e8f0ff, #c5d8ff); }
+    .post-thumb.t2 { background: linear-gradient(135deg, #e8fff0, #c5f0d8); }
+    .post-thumb.t3 { background: linear-gradient(135deg, #fff8e8, #ffe8c5); }
+
+    .post-body { padding: 28px; }
+    .post-cat {
+      font-size: 11px; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 1px;
+      color: var(--accent); margin-bottom: 10px;
+    }
+    .post-body h3 {
+      font-size: 18px; font-weight: 600;
+      line-height: 1.4; margin-bottom: 10px;
+    }
+    .post-body p {
+      font-size: 14px; color: var(--ink-soft);
+      line-height: 1.6; font-weight: 300;
+    }
+    .post-footer {
+      padding: 16px 28px;
+      border-top: 1px solid var(--line);
+      display: flex; justify-content: space-between;
+      font-size: 12px; color: var(--ink-muted);
+    }
+
+    /* ─── CONTACT ─────────────────────────────────────── */
+    #contacto {
+      background: var(--ink);
+      padding: 100px 24px;
+    }
+    #contacto .section-label { color: rgba(10,95,255,0.9); }
+    #contacto h2 { color: #fff; }
+
+    .contact-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      margin-top: 64px;
+      align-items: start;
+    }
+    @media (max-width: 768px) {
+      .contact-wrap { grid-template-columns: 1fr; }
+    }
+
+    .contact-info p {
+      font-size: 18px;
+      color: rgba(255,255,255,0.6);
+      font-weight: 300;
+      line-height: 1.7;
+      margin-bottom: 40px;
+    }
+
+    .contact-channels {
+      display: flex; flex-direction: column; gap: 16px;
+    }
+    .channel {
+      display: flex; align-items: center; gap: 16px;
+      padding: 20px 24px;
+      border-radius: var(--radius-sm);
+      border: 1px solid rgba(255,255,255,0.1);
+      text-decoration: none;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .channel:hover {
+      border-color: var(--accent);
+      background: rgba(10,95,255,0.08);
+    }
+    .channel-icon { font-size: 22px; }
+    .channel-label { font-size: 14px; font-weight: 500; color: #fff; }
+    .channel-sub { font-size: 12px; color: rgba(255,255,255,0.4); margin-top: 2px; }
+
+    .contact-form {
+      display: flex; flex-direction: column; gap: 16px;
+    }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+    .field {
+      display: flex; flex-direction: column; gap: 8px;
+    }
+    .field label {
+      font-size: 12px; font-weight: 500;
+      color: rgba(255,255,255,0.5);
+      text-transform: uppercase; letter-spacing: 0.5px;
+    }
+    .field input, .field select, .field textarea {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: var(--radius-sm);
+      padding: 14px 18px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 15px;
+      color: #fff;
+      outline: none;
+      transition: border-color 0.2s, background 0.2s;
+      resize: none;
+    }
+    .field input::placeholder, .field textarea::placeholder { color: rgba(255,255,255,0.25); }
+    .field input:focus, .field select:focus, .field textarea:focus {
+      border-color: var(--accent);
+      background: rgba(10,95,255,0.08);
+    }
+    .field select option { background: #1a1a1a; }
+
+    .submit-btn {
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      border-radius: 100px;
+      padding: 18px 40px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 15px; font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      box-shadow: 0 8px 32px rgba(10,95,255,0.4);
+      align-self: flex-start;
+    }
+    .submit-btn:hover {
+      background: var(--accent-dark);
+      transform: translateY(-2px);
+    }
+
+    /* ─── FOOTER ──────────────────────────────────────── */
+    footer {
+      background: #070707;
+      padding: 64px 24px 32px;
+    }
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .footer-top {
+      display: flex; justify-content: space-between; align-items: flex-start;
+      padding-bottom: 48px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      flex-wrap: wrap; gap: 40px;
+    }
+    .footer-brand .nav-logo { font-size: 28px; }
+    .footer-brand p {
+      font-size: 14px;
+      color: rgba(255,255,255,0.35);
+      margin-top: 10px;
+      max-width: 260px;
+      line-height: 1.6;
+    }
+    .footer-col h5 {
+      font-size: 12px; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 1px;
+      color: rgba(255,255,255,0.35);
+      margin-bottom: 16px;
+    }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .footer-col ul a {
+      font-size: 14px; color: rgba(255,255,255,0.55);
+      text-decoration: none; transition: color 0.2s;
+    }
+    .footer-col ul a:hover { color: #fff; }
+
+    .footer-bottom {
+      display: flex; justify-content: space-between; align-items: center;
+      padding-top: 32px; flex-wrap: wrap; gap: 16px;
+    }
+    .footer-bottom p {
+      font-size: 13px; color: rgba(255,255,255,0.25);
+    }
+    .footer-bottom a { color: rgba(255,255,255,0.35); text-decoration: none; }
+
+    /* ─── SCROLL REVEAL ───────────────────────────────── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ─── MOBILE NAV ──────────────────────────────────── */
+    @media (max-width: 768px) {
+      nav { padding: 0 20px; }
+      .nav-links { display: none; }
+      h1 { letter-spacing: -1px; }
+      .hero-stats { gap: 32px; }
+      section { padding: 72px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ─── NAV ──────────────────────────────────────────── -->
+<nav>
+  <a href="#" class="nav-logo">i<span>Data</span>sol</a>
+  <ul class="nav-links">
+    <li><a href="#servicios">Servicios</a></li>
+    <li><a href="#casos">Casos</a></li>
+    <li><a href="#consultoria">Consultoría</a></li>
+    <li><a href="#nosotros">Nosotros</a></li>
+    <li><a href="#blog">Blog</a></li>
+    <li><a href="#contacto" class="nav-cta">Hablar con un experto</a></li>
+  </ul>
+</nav>
+
+<!-- ─── HERO ──────────────────────────────────────────── -->
+<section id="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-badge">Marketing Directo · Argentina</div>
+  <h1>Datos precisos.<br><em>Resultados reales.</em></h1>
+  <p class="hero-sub">
+    Bases de datos geolocalizadas, campañas de email y WhatsApp, y consultoría especializada en conversión para empresas que quieren crecer.
+  </p>
+  <div class="hero-actions">
+    <a href="#contacto" class="btn-primary">Solicitar una demo</a>
+    <a href="#servicios" class="btn-secondary">Ver servicios →</a>
+  </div>
+  <div class="hero-stats">
+    <div class="stat">
+      <div class="stat-num">+5M<span>.</span></div>
+      <div class="stat-label">Registros activos</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">98<span>%</span></div>
+      <div class="stat-label">Tasa de entrega</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">+300<span>.</span></div>
+      <div class="stat-label">Clientes B2B</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">3x<span>.</span></div>
+      <div class="stat-label">CR promedio</div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── LOGOS ──────────────────────────────────────────── -->
+<div id="logos">
+  <div class="container">
+    <p class="logos-label">Empresas que confían en iDatasol</p>
+    <div class="logos-row">
+      <span class="logo-pill">Empresa A</span>
+      <span class="logo-pill">Empresa B</span>
+      <span class="logo-pill">Empresa C</span>
+      <span class="logo-pill">Empresa D</span>
+      <span class="logo-pill">Empresa E</span>
+      <span class="logo-pill">Empresa F</span>
+    </div>
+  </div>
+</div>
+
+<!-- ─── SERVICIOS ──────────────────────────────────────── -->
+<section id="servicios">
+  <div class="container">
+    <div class="services-header">
+      <div>
+        <p class="section-label">Servicios</p>
+        <h2>Todo lo que necesitás<br>para <em>llegar a quien importa</em></h2>
+      </div>
+      <a href="#contacto" class="btn-secondary">Ver todos →</a>
+    </div>
+
+    <div class="services-grid">
+
+      <!-- FEATURED -->
+      <div class="service-card featured reveal">
+        <div class="featured-inner">
+          <div class="featured-left">
+            <div class="service-icon">🗄️</div>
+            <h3>Bases de Datos & Registros Geolocalizados</h3>
+            <p>Accedé a millones de contactos B2B segmentados por industria, zona geográfica, tamaño de empresa y perfil de decisor. Datos actualizados, validados y listos para activar.</p>
+            <div class="service-tags">
+              <span class="tag">Geolocalización por CABA y GBA</span>
+              <span class="tag">Filtros por industria</span>
+              <span class="tag">Decisores clave</span>
+              <span class="tag">Exportación CSV / API</span>
+            </div>
+          </div>
+          <div class="featured-right">
+            <div class="metric"><div class="metric-num">+5M<span>.</span></div><div class="metric-label">Registros en base</div></div>
+            <div class="metric"><div class="metric-num">24h<span>.</span></div><div class="metric-label">Entrega de listas</div></div>
+            <div class="metric"><div class="metric-num">98<span>%</span></div><div class="metric-label">Tasa de validez</div></div>
+            <div class="metric"><div class="metric-num">50+<span>.</span></div><div class="metric-label">Segmentos disponibles</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- EMAIL -->
+      <div class="service-card reveal">
+        <div class="service-icon">📧</div>
+        <h3>Campañas de Email Marketing</h3>
+        <p>Diseño, ejecución y optimización de campañas masivas de email con foco en entregabilidad, personalización y trazabilidad de resultados en tiempo real.</p>
+        <div class="service-tags">
+          <span class="tag">Diseño HTML</span>
+          <span class="tag">A/B Testing</span>
+          <span class="tag">Reportes en tiempo real</span>
+        </div>
+      </div>
+
+      <!-- WHATSAPP -->
+      <div class="service-card reveal">
+        <div class="service-icon">💬</div>
+        <h3>Campañas de WhatsApp</h3>
+        <p>Alcanzá a tus prospectos por el canal de mayor apertura. Mensajes personalizados, automatizados y con respuesta gestionada para maximizar la conversión.</p>
+        <div class="service-tags">
+          <span class="tag">API oficial</span>
+          <span class="tag">Automatización</span>
+          <span class="tag">+95% tasa de apertura</span>
+        </div>
+      </div>
+
+      <!-- INVESTIGACION -->
+      <div class="service-card reveal">
+        <div class="service-icon">🔬</div>
+        <h3>Investigación de Mercado para Crecimiento</h3>
+        <p>Estudios cuantitativos y cualitativos orientados a identificar oportunidades reales de crecimiento. Insights accionables para tomar mejores decisiones comerciales.</p>
+        <div class="service-tags">
+          <span class="tag">Análisis competitivo</span>
+          <span class="tag">Mapeo de demanda</span>
+          <span class="tag">Informe ejecutivo</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── CASOS ──────────────────────────────────────────── -->
+<section id="casos">
+  <div class="container">
+    <div class="reveal">
+      <p class="section-label">Casos de éxito</p>
+      <h2>Números que<br><em>hablan solos</em></h2>
+      <p class="section-intro">Resultados reales de empresas que eligieron iDatasol para potenciar su marketing directo.</p>
+    </div>
+
+    <div class="casos-grid">
+      <div class="caso-card reveal">
+        <div class="caso-industry">Sector Financiero</div>
+        <div class="caso-result">3.2x<span>.</span></div>
+        <p class="caso-desc">Aumento en la tasa de conversión mediante segmentación por perfil financiero y campaña de nurturing en 3 etapas vía email + WhatsApp.</p>
+      </div>
+      <div class="caso-card reveal">
+        <div class="caso-industry">Real Estate</div>
+        <div class="caso-result">+48<span>%</span></div>
+        <p class="caso-desc">Incremento en leads calificados para desarrollos inmobiliarios en CABA usando bases geolocalizadas y retargeting multicanal.</p>
+      </div>
+      <div class="caso-card reveal">
+        <div class="caso-industry">Educación B2B</div>
+        <div class="caso-result">-60<span>%</span></div>
+        <p class="caso-desc">Reducción en el costo de adquisición de nuevos alumnos corporativos mediante campañas de email segmentadas a directivos de RRHH.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CONSULTORIA ────────────────────────────────────── -->
+<section id="consultoria">
+  <div class="container">
+    <div class="consult-wrap">
+      <div class="consult-text reveal">
+        <p class="section-label">Consultoría</p>
+        <h2>Maximizamos tu<br><em>tasa de conversión</em></h2>
+        <p class="section-intro">Especialistas en retargeting, nurturing y optimización de funnels para que cada lead valga más.</p>
+
+        <div class="consult-steps">
+          <div class="step">
+            <span class="step-num">01</span>
+            <div class="step-content">
+              <h4>Diagnóstico del funnel</h4>
+              <p>Analizamos tus procesos actuales, identificamos los cuellos de botella y definimos los KPIs de conversión más relevantes para tu negocio.</p>
+            </div>
+          </div>
+          <div class="step">
+            <span class="step-num">02</span>
+            <div class="step-content">
+              <h4>Estrategia de retargeting</h4>
+              <p>Diseñamos flujos de comunicación para recuperar y activar prospectos que no convirtieron en el primer contacto.</p>
+            </div>
+          </div>
+          <div class="step">
+            <span class="step-num">03</span>
+            <div class="step-content">
+              <h4>Nurturing automatizado</h4>
+              <p>Creamos secuencias de contenido personalizadas que acompañan al prospecto en cada etapa del ciclo de compra.</p>
+            </div>
+          </div>
+          <div class="step">
+            <span class="step-num">04</span>
+            <div class="step-content">
+              <h4>Medición y optimización continua</h4>
+              <p>Reportes ejecutivos semanales con análisis de resultados y ajustes iterativos para mejorar el CR de forma constante.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="consult-visual reveal">
+        <p style="font-size:13px;font-weight:600;color:var(--ink-muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:28px;">Funnel de conversión optimizado</p>
+        <div class="funnel">
+          <div class="funnel-stage"><span class="funnel-label">Awareness / Base de datos</span><span class="funnel-pct">100%</span></div>
+          <div class="funnel-stage"><span class="funnel-label">Primer contacto</span><span class="funnel-pct">72%</span></div>
+          <div class="funnel-stage"><span class="funnel-label">Interacción</span><span class="funnel-pct">45%</span></div>
+          <div class="funnel-stage"><span class="funnel-label">Calificación</span><span class="funnel-pct">28%</span></div>
+          <div class="funnel-stage"><span class="funnel-label">Conversión</span><span class="funnel-pct">14%</span></div>
+        </div>
+        <p style="font-size:12px;color:var(--ink-muted);margin-top:20px;">* Conversión promedio de clientes iDatasol con consultoría activa</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── NOSOTROS ───────────────────────────────────────── -->
+<section id="nosotros">
+  <div class="container">
+    <div class="nosotros-wrap">
+      <div class="nosotros-text reveal">
+        <p class="section-label">Sobre iDatasol</p>
+        <h2>Datos con<br><em>propósito estratégico</em></h2>
+        <p>Somos una empresa argentina especializada en soluciones de marketing directo para el mercado B2B. Combinamos tecnología de datos con expertise en campañas de conversión para ayudar a las empresas a crecer de forma inteligente y medible.</p>
+        <p>Nuestro equipo integra analistas de datos, estrategas de marketing y especialistas en canales digitales con experiencia probada en los principales mercados de Argentina.</p>
+        <div style="margin-top:40px;">
+          <a href="#contacto" class="btn-primary">Conocé al equipo →</a>
+        </div>
+      </div>
+      <div class="values-grid reveal">
+        <div class="value-item">
+          <div class="value-icon">🎯</div>
+          <h4>Precisión</h4>
+          <p>Datos validados y segmentados para que cada impacto llegue exactamente donde debe.</p>
+        </div>
+        <div class="value-item">
+          <div class="value-icon">📊</div>
+          <h4>Transparencia</h4>
+          <p>Reportes claros con métricas reales. Sin opacidad, sin promesas vacías.</p>
+        </div>
+        <div class="value-item">
+          <div class="value-icon">⚡</div>
+          <h4>Velocidad</h4>
+          <p>Activación de campañas en menos de 48 horas desde el briefing.</p>
+        </div>
+        <div class="value-item">
+          <div class="value-icon">🔄</div>
+          <h4>Mejora continua</h4>
+          <p>Optimización iterativa con foco en maximizar el retorno de cada peso invertido.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── BLOG ───────────────────────────────────────────── -->
+<section id="blog">
+  <div class="container">
+    <div class="reveal" style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:24px;">
+      <div>
+        <p class="section-label">Blog & Recursos</p>
+        <h2>Insights para<br><em>tomar mejores decisiones</em></h2>
+      </div>
+      <a href="#" class="btn-secondary">Ver todos →</a>
+    </div>
+
+    <div class="blog-grid">
+      <article class="post-card reveal">
+        <div class="post-thumb t1">📧</div>
+        <div class="post-body">
+          <p class="post-cat">Email Marketing</p>
+          <h3>Cómo mejorar tu tasa de apertura en campañas B2B en Argentina</h3>
+          <p>Las mejores prácticas de asunto, sender y timing para maximizar la apertura en el mercado local.</p>
+        </div>
+        <div class="post-footer"><span>5 min de lectura</span><span>Marzo 2025</span></div>
+      </article>
+      <article class="post-card reveal">
+        <div class="post-thumb t2">💬</div>
+        <div class="post-body">
+          <p class="post-cat">WhatsApp Marketing</p>
+          <h3>WhatsApp como canal B2B: oportunidades y límites legales en Argentina</h3>
+          <p>Todo lo que necesitás saber antes de activar campañas masivas por WhatsApp Business API.</p>
+        </div>
+        <div class="post-footer"><span>7 min de lectura</span><span>Febrero 2025</span></div>
+      </article>
+      <article class="post-card reveal">
+        <div class="post-thumb t3">🔬</div>
+        <div class="post-body">
+          <p class="post-cat">Investigación de Mercado</p>
+          <h3>Por qué el dato geolocalizado cambia la ecuación del marketing directo</h3>
+          <p>Cómo la segmentación geográfica impacta en las tasas de conversión en campañas de captación.</p>
+        </div>
+        <div class="post-footer"><span>6 min de lectura</span><span>Enero 2025</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CONTACTO ───────────────────────────────────────── -->
+<section id="contacto">
+  <div class="container">
+    <div class="reveal">
+      <p class="section-label">Contacto</p>
+      <h2>Hablemos de<br><em>tu próxima campaña</em></h2>
+    </div>
+
+    <div class="contact-wrap">
+      <div class="contact-info reveal">
+        <p>Contanos tu desafío comercial y en menos de 24 horas uno de nuestros especialistas te propone una solución concreta.</p>
+        <div class="contact-channels">
+          <a href="mailto:hola@idatasol.com" class="channel">
+            <span class="channel-icon">📧</span>
+            <div>
+              <div class="channel-label">hola@idatasol.com</div>
+              <div class="channel-sub">Respondemos en menos de 4 horas hábiles</div>
+            </div>
+          </a>
+          <a href="https://wa.me/5491100000000" class="channel">
+            <span class="channel-icon">💬</span>
+            <div>
+              <div class="channel-label">WhatsApp directo</div>
+              <div class="channel-sub">Lunes a viernes, 9 a 18 hs</div>
+            </div>
+          </a>
+          <a href="#" class="channel">
+            <span class="channel-icon">📍</span>
+            <div>
+              <div class="channel-label">Buenos Aires, Argentina</div>
+              <div class="channel-sub">Servicio para todo el país</div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <form class="contact-form reveal" onsubmit="handleSubmit(event)">
+        <div class="form-row">
+          <div class="field">
+            <label for="nombre">Nombre</label>
+            <input id="nombre" type="text" placeholder="Tu nombre" required />
+          </div>
+          <div class="field">
+            <label for="empresa">Empresa</label>
+            <input id="empresa" type="text" placeholder="Tu empresa" required />
+          </div>
+        </div>
+        <div class="field">
+          <label for="email">Email corporativo</label>
+          <input id="email" type="email" placeholder="nombre@empresa.com" required />
+        </div>
+        <div class="field">
+          <label for="servicio">¿Qué necesitás?</label>
+          <select id="servicio">
+            <option value="">Seleccioná un servicio</option>
+            <option>Bases de datos / Registros</option>
+            <option>Campaña de Email Marketing</option>
+            <option>Campaña de WhatsApp</option>
+            <option>Consultoría en Conversión</option>
+            <option>Investigación de Mercado</option>
+            <option>Servicio integral</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="mensaje">Contanos tu desafío</label>
+          <textarea id="mensaje" rows="4" placeholder="¿Cuál es tu objetivo principal y en qué mercado operás?"></textarea>
+        </div>
+        <button type="submit" class="submit-btn">Enviar consulta →</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ─────────────────────────────────────────── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="#" class="nav-logo">i<span>Data</span>sol</a>
+        <p>Datos precisos para decisiones inteligentes. Marketing directo B2B en Argentina.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Servicios</h5>
+        <ul>
+          <li><a href="#servicios">Bases de Datos</a></li>
+          <li><a href="#servicios">Email Marketing</a></li>
+          <li><a href="#servicios">WhatsApp Marketing</a></li>
+          <li><a href="#consultoria">Consultoría</a></li>
+          <li><a href="#servicios">Investigación de Mercado</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Empresa</h5>
+        <ul>
+          <li><a href="#nosotros">Sobre nosotros</a></li>
+          <li><a href="#casos">Casos de éxito</a></li>
+          <li><a href="#blog">Blog</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Legal</h5>
+        <ul>
+          <li><a href="#">Política de privacidad</a></li>
+          <li><a href="#">Términos de uso</a></li>
+          <li><a href="#">Protección de datos</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 iDatasol. Todos los derechos reservados.</p>
+      <p>Hecho en <a href="#">Buenos Aires, Argentina 🇦🇷</a></p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => observer.observe(el));
+
+  // Form submit
+  function handleSubmit(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('.submit-btn');
+    btn.textContent = '✓ Consulta enviada';
+    btn.style.background = '#16a34a';
+    setTimeout(() => {
+      btn.textContent = 'Enviar consulta →';
+      btn.style.background = '';
+      e.target.reset();
+    }, 3000);
+  }
+
+  // Nav scroll effect
+  const nav = document.querySelector('nav');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 40) {
+      nav.style.boxShadow = '0 2px 24px rgba(0,0,0,0.08)';
+    } else {
+      nav.style.boxShadow = 'none';
+    }
+  });
+</script>
+</body>
+</html>
