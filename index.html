@@ -768,13 +768,156 @@
       transform: translateY(0);
     }
 
-    /* ─── MOBILE NAV ──────────────────────────────────── */
+    /* ─── HAMBURGER ───────────────────────────────────── */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      width: 36px; height: 36px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px;
+    }
+    .hamburger span {
+      display: block;
+      width: 22px; height: 2px;
+      background: var(--ink);
+      border-radius: 2px;
+      transition: all 0.3s ease;
+      transform-origin: center;
+    }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* Mobile menu drawer */
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 64px; left: 0; right: 0;
+      background: rgba(245,245,240,0.97);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--line);
+      padding: 16px 20px 24px;
+      z-index: 99;
+      flex-direction: column;
+      gap: 4px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      color: var(--ink);
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 500;
+      padding: 12px 8px;
+      border-bottom: 1px solid var(--line);
+      transition: color 0.2s;
+    }
+    .mobile-menu a:last-child {
+      border-bottom: none;
+      margin-top: 8px;
+      background: var(--accent);
+      color: #fff;
+      border-radius: 100px;
+      text-align: center;
+      padding: 14px;
+      font-size: 15px;
+    }
+
+    /* ─── RESPONSIVE ──────────────────────────────────── */
     @media (max-width: 768px) {
+      /* Nav */
       nav { padding: 0 20px; }
       .nav-links { display: none; }
+      .hamburger { display: flex; }
+
+      /* Typography */
       h1 { letter-spacing: -1px; }
-      .hero-stats { gap: 32px; }
-      section { padding: 72px 20px; }
+      h2 { letter-spacing: -0.5px; }
+
+      /* Sections */
+      section { padding: 64px 20px; }
+      #hero { padding: 100px 20px 64px; }
+
+      /* Hero stats — 2x2 grid en mobile */
+      .hero-stats {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+        width: 100%;
+        max-width: 320px;
+      }
+      .stat-num { font-size: 32px; }
+
+      /* Services — sin span 2 en mobile */
+      .services-grid { grid-template-columns: 1fr; gap: 16px; }
+      .service-card { padding: 32px 24px; }
+      .service-card.featured { grid-column: span 1; }
+      .featured-inner { flex-direction: column; gap: 32px; }
+      .featured-right { grid-template-columns: 1fr 1fr; }
+      .metric-num { font-size: 32px; }
+
+      /* Casos */
+      .casos-grid { grid-template-columns: 1fr; gap: 16px; }
+      .caso-card { padding: 28px 24px; }
+      .caso-result { font-size: 40px; }
+
+      /* Consultoría */
+      .consult-wrap { gap: 48px; }
+      .consult-visual { padding: 28px 20px; }
+      /* Funnel labels más cortos en mobile */
+      .funnel-stage { padding: 12px 14px; }
+      .funnel-label { font-size: 11px; }
+      .funnel-pct { font-size: 11px; }
+      /* Forzar ancho completo en funnel mobile */
+      .funnel-stage:nth-child(2),
+      .funnel-stage:nth-child(3),
+      .funnel-stage:nth-child(4),
+      .funnel-stage:nth-child(5) { width: 100%; }
+
+      /* Nosotros */
+      .nosotros-wrap { gap: 40px; }
+      .values-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+      .value-item { padding: 20px 16px; }
+
+      /* Blog */
+      .blog-grid { grid-template-columns: 1fr; gap: 16px; }
+
+      /* Contacto */
+      .contact-wrap { gap: 48px; }
+      .contact-info p { font-size: 16px; margin-bottom: 28px; }
+      .form-row { grid-template-columns: 1fr; }
+      .submit-btn { width: 100%; text-align: center; }
+
+      /* Footer */
+      .footer-top { gap: 32px; }
+      .footer-bottom { flex-direction: column; text-align: center; gap: 8px; }
+
+      /* Services header */
+      .services-header { flex-direction: column; align-items: flex-start; }
+
+      /* Section label + h2 + link row */
+      #blog .reveal { flex-direction: column; align-items: flex-start; gap: 16px; }
+    }
+
+    /* Tablet intermedio */
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .services-grid { grid-template-columns: 1fr 1fr; }
+      .service-card.featured { grid-column: span 2; }
+      .casos-grid { grid-template-columns: 1fr 1fr; }
+      .blog-grid { grid-template-columns: 1fr 1fr; }
+      nav { padding: 0 32px; }
+      .nav-links { gap: 20px; }
+    }
+
+    /* Safari-specific fixes */
+    @supports (-webkit-touch-callout: none) {
+      .hero-grid { -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, black 20%, transparent 100%); }
+      .btn-primary, .btn-secondary { -webkit-appearance: none; }
     }
   </style>
 </head>
@@ -791,7 +934,20 @@
     <li><a href="#blog">Blog</a></li>
     <li><a href="#contacto" class="nav-cta">Hablar con un experto</a></li>
   </ul>
+  <button class="hamburger" id="hamburger" aria-label="Menú">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+
+<!-- Mobile menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#servicios" onclick="closeMenu()">Servicios</a>
+  <a href="#casos" onclick="closeMenu()">Casos</a>
+  <a href="#consultoria" onclick="closeMenu()">Consultoría</a>
+  <a href="#nosotros" onclick="closeMenu()">Nosotros</a>
+  <a href="#blog" onclick="closeMenu()">Blog</a>
+  <a href="#contacto" onclick="closeMenu()">Hablar con un experto</a>
+</div>
 
 <!-- ─── HERO ──────────────────────────────────────────── -->
 <section id="hero">
@@ -1200,6 +1356,20 @@
 </footer>
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  // Hamburger menu
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    mobileMenu.classList.toggle('open');
+  });
+  function closeMenu() {
+    hamburger.classList.remove('open');
+    mobileMenu.classList.remove('open');
+  }
+  // Close menu on scroll
+  window.addEventListener('scroll', closeMenu, { passive: true });
+
   // Scroll reveal
   const reveals = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver((entries) => {
