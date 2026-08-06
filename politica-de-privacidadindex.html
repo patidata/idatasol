@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Política de Privacidad | iDatasol</title>
+  <meta name="description" content="Política de privacidad de iDatasol: cómo recopilamos, usamos y protegemos los datos, en cumplimiento de la Ley 25.326 de Protección de Datos Personales de Argentina." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.idatasol.com/politica-de-privacidad/" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #f5f5f0;
+      --bg-card: #ffffff;
+      --ink: #0d0d0d;
+      --ink-soft: #555550;
+      --ink-muted: #999990;
+      --accent: #0a5fff;
+      --accent-dark: #0040cc;
+      --accent-light: #e8f0ff;
+      --line: #e2e2dc;
+      --radius: 16px;
+      --radius-sm: 10px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ─── NAV ─────────────────────────────────────────── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 48px;
+      height: 64px;
+      background: rgba(245,245,240,0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav-logo {
+      font-family: 'DM Serif Display', serif;
+      font-size: 22px;
+      color: var(--ink);
+      text-decoration: none;
+      letter-spacing: -0.5px;
+    }
+    .nav-logo span { color: var(--accent); }
+
+    .nav-links { display: flex; gap: 36px; list-style: none; align-items: center; }
+    .nav-links a {
+      color: var(--ink-soft);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--ink); }
+
+    .nav-cta {
+      background: var(--ink);
+      color: #fff !important;
+      padding: 8px 20px;
+      border-radius: 100px;
+      font-size: 13px !important;
+      font-weight: 500 !important;
+      transition: background 0.2s !important;
+    }
+    .nav-cta:hover { background: var(--accent) !important; color: #fff !important; }
+
+    /* ─── CONTENT ─────────────────────────────────────── */
+    main {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 160px 24px 100px;
+    }
+
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--accent-light); color: var(--accent-dark);
+      font-size: 12px; font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase;
+      padding: 6px 14px; border-radius: 100px; margin-bottom: 24px;
+    }
+    .eyebrow::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+
+    h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(36px, 5vw, 52px);
+      line-height: 1.1;
+      letter-spacing: -0.5px;
+      margin-bottom: 12px;
+    }
+
+    .updated {
+      font-size: 13.5px; color: var(--ink-muted); margin-bottom: 40px;
+    }
+
+    .callout {
+      background: var(--bg-card); border: 1px solid var(--line); border-left: 3px solid var(--accent);
+      border-radius: var(--radius-sm);
+      padding: 18px 22px; font-size: 14.5px; color: var(--ink-soft);
+      margin-bottom: 48px;
+    }
+
+    h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 22px;
+      margin: 48px 0 14px;
+      padding-top: 24px;
+      border-top: 1px solid var(--line);
+    }
+    h2:first-of-type { border-top: none; padding-top: 0; margin-top: 0; }
+
+    p { margin-bottom: 16px; color: var(--ink-soft); }
+    ul { margin: 0 0 16px; padding-left: 20px; color: var(--ink-soft); }
+    li { margin-bottom: 8px; }
+    strong { color: var(--ink); font-weight: 600; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ─── FOOTER ──────────────────────────────────────── */
+    footer { background: #070707; padding: 64px 24px 32px; }
+    .footer-inner { max-width: 1100px; margin: 0 auto; }
+    .footer-top {
+      display: flex; justify-content: space-between; align-items: flex-start;
+      padding-bottom: 48px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      flex-wrap: wrap; gap: 40px;
+    }
+    .footer-brand .nav-logo { font-size: 28px; }
+    .footer-brand p {
+      font-size: 14px; color: rgba(255,255,255,0.35);
+      margin-top: 10px; max-width: 260px; line-height: 1.6;
+    }
+    .footer-col h5 {
+      font-size: 12px; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 1px;
+      color: rgba(255,255,255,0.35);
+      margin-bottom: 16px;
+    }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; padding-left: 0; }
+    .footer-col ul a {
+      font-size: 14px; color: rgba(255,255,255,0.55);
+      text-decoration: none; transition: color 0.2s;
+    }
+    .footer-col ul a:hover { color: #fff; }
+
+    .footer-bottom {
+      display: flex; justify-content: space-between; align-items: center;
+      padding-top: 32px; flex-wrap: wrap; gap: 16px;
+    }
+    .footer-bottom p { font-size: 13px; color: rgba(255,255,255,0.25); }
+    .footer-bottom a { color: rgba(255,255,255,0.35); text-decoration: none; }
+
+    @media (max-width: 720px) {
+      nav { padding: 0 20px; }
+      .nav-links { display: none; }
+      main { padding: 120px 20px 72px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">i<span>Data</span>sol</a>
+  <ul class="nav-links">
+    <li><a href="/#servicios">Servicios</a></li>
+    <li><a href="/#casos">Casos</a></li>
+    <li><a href="/#nosotros">Nosotros</a></li>
+    <li><a href="/#contacto" class="nav-cta">Hablar con un experto</a></li>
+  </ul>
+</nav>
+
+<main>
+  <span class="eyebrow">Legal</span>
+  <h1>Política de Privacidad</h1>
+  <p class="updated">Última actualización: agosto de 2026</p>
+
+  <div class="callout">
+    Este documento es un borrador preparado como punto de partida y aún no fue revisado por un profesional legal. Antes de su publicación definitiva, recomendamos su revisión por un abogado especializado en protección de datos personales en Argentina.
+  </div>
+
+  <h2>1. Responsable del tratamiento</h2>
+  <p>iDatasol ("iData", "nosotros") es responsable del tratamiento de los datos personales descriptos en esta Política de Privacidad, en cumplimiento de la Ley N.º 25.326 de Protección de Datos Personales de la República Argentina y sus normas reglamentarias.</p>
+
+  <h2>2. Qué datos recopilamos</h2>
+  <p>Según el contexto, podemos tratar las siguientes categorías de datos:</p>
+  <ul>
+    <li><strong>Datos de clientes propios de nuestros clientes (retargeting):</strong> cuando un cliente nos contrata para ejecutar campañas de retargeting, tratamos los datos de contacto de sus propios clientes, leads o suscriptores (por ejemplo, listas de compradores existentes, suscriptores de newsletter, o visitantes identificados de su sitio web), provistos directamente por ese cliente para dicha finalidad.</li>
+    <li><strong>Datos de contacto profesional adquiridos a terceros (B2B):</strong> nombre, apellido, cargo, empresa, correo electrónico corporativo y teléfono, obtenidos de fuentes públicas o bases de datos comerciales de terceros, utilizados para campañas de generación de leads y marketing directo.</li>
+    <li><strong>Datos de interacción:</strong> aperturas de correo, clics en enlaces, y respuestas a formularios, recopilados a través de nuestras plataformas de envío de email marketing.</li>
+    <li><strong>Datos de navegación del sitio web:</strong> dirección IP, tipo de navegador y páginas visitadas, con fines analíticos y de mejora del servicio.</li>
+  </ul>
+
+  <h2>3. Finalidad del tratamiento</h2>
+  <p>Utilizamos los datos para:</p>
+  <ul>
+    <li>Ejecutar campañas de marketing directo (email y WhatsApp) en nombre propio o de nuestros clientes.</li>
+    <li>Elaborar y mantener bases de datos segmentadas para fines comerciales B2B.</li>
+    <li>Medir el rendimiento de nuestras campañas y mejorar nuestros servicios.</li>
+    <li>Responder consultas y gestionar la relación comercial con nuestros clientes.</li>
+  </ul>
+
+  <h2>4. Origen de los datos y bases compartidas con clientes</h2>
+  <p>Como agencia de marketing directo, trabajamos con datos de dos orígenes principales:</p>
+  <ul>
+    <li><strong>Datos propios de nuestros clientes (primera parte):</strong> en campañas de retargeting, utilizamos bases que pertenecen a nuestros propios clientes — por ejemplo, sus clientes actuales, suscriptores o leads ya captados por ellos — con el fin de reforzar su comunicación con esa audiencia existente.</li>
+    <li><strong>Bases adquiridas a terceros (B2B):</strong> para campañas de generación de nuevos leads, utilizamos bases de datos comerciales de terceros, registros públicos, o directorios de cámaras y asociaciones profesionales.</li>
+  </ul>
+  <p>En todos los casos, trabajamos para que el tratamiento se realice conforme a los principios de la Ley 25.326, incluyendo la finalidad legítima del tratamiento y el derecho de las personas a oponerse o solicitar la baja.</p>
+
+  <h2>5. Con quién compartimos los datos</h2>
+  <p>Podemos compartir datos con:</p>
+  <ul>
+    <li>Nuestros clientes, en el marco de los servicios de marketing directo que les prestamos.</li>
+    <li>Proveedores tecnológicos que utilizamos para el envío y gestión de campañas (por ejemplo, plataformas de email marketing y de infraestructura de envío), quienes procesan los datos por nuestra cuenta y bajo nuestras instrucciones.</li>
+    <li>Autoridades públicas, cuando así lo exija la normativa vigente.</li>
+  </ul>
+  <p>No vendemos datos personales a terceros no vinculados a la prestación de nuestros servicios.</p>
+
+  <h2>6. Tus derechos (Derechos ARCO)</h2>
+  <p>De acuerdo con la Ley 25.326, tenés derecho a acceder, rectificar, actualizar y solicitar la supresión de tus datos personales. También podés oponerte al tratamiento de tus datos con fines de marketing directo en cualquier momento.</p>
+  <p>Para ejercer estos derechos, podés escribirnos a <a href="mailto:privacidad@idatasol.com">privacidad@idatasol.com</a>. La Agencia de Acceso a la Información Pública, en su carácter de Órgano de Control de la Ley 25.326, tiene la atribución de atender las denuncias y reclamos que se interpongan con relación al incumplimiento de las normas sobre protección de datos personales.</p>
+
+  <h2>7. Baja de comunicaciones comerciales</h2>
+  <p>Todos nuestros correos de marketing incluyen un enlace de baja (unsubscribe) visible, que permite dejar de recibir comunicaciones de forma inmediata. También podés solicitar la baja escribiendo a <a href="mailto:privacidad@idatasol.com">privacidad@idatasol.com</a>.</p>
+
+  <h2>8. Seguridad de los datos</h2>
+  <p>Implementamos medidas técnicas y organizativas razonables para proteger los datos personales que tratamos contra el acceso no autorizado, la pérdida o la alteración.</p>
+
+  <h2>9. Conservación de los datos</h2>
+  <p>Conservamos los datos personales durante el tiempo necesario para cumplir con las finalidades descriptas en esta política, o según lo requiera la normativa aplicable.</p>
+
+  <h2>10. Cambios a esta política</h2>
+  <p>Podemos actualizar esta Política de Privacidad periódicamente. La fecha de la última actualización se indica al comienzo de este documento.</p>
+
+  <h2>11. Contacto</h2>
+  <p>Ante cualquier consulta sobre esta política o sobre el tratamiento de tus datos, escribinos a <a href="mailto:privacidad@idatasol.com">privacidad@idatasol.com</a>.</p>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="/" class="nav-logo">i<span>Data</span>sol</a>
+        <p>Datos precisos para decisiones inteligentes. Marketing directo B2B en Argentina.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Servicios</h5>
+        <ul>
+          <li><a href="/#servicios">Bases de Datos</a></li>
+          <li><a href="/#servicios">Email Marketing</a></li>
+          <li><a href="/#servicios">WhatsApp Marketing</a></li>
+          <li><a href="/#consultoria">Consultoría</a></li>
+          <li><a href="/#servicios">Investigación de Mercado</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Empresa</h5>
+        <ul>
+          <li><a href="/#nosotros">Sobre nosotros</a></li>
+          <li><a href="/#casos">Casos de éxito</a></li>
+          <li><a href="/#blog">Blog</a></li>
+          <li><a href="/#contacto">Contacto</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Legal</h5>
+        <ul>
+          <li><a href="/politica-de-privacidad/">Política de privacidad</a></li>
+          <li><a href="/#">Términos de uso</a></li>
+          <li><a href="/#">Protección de datos</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 iDatasol. Todos los derechos reservados.</p>
+      <p>Hecho en Ciudad de Buenos Aires, Argentina 🇦🇷</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
